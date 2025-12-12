@@ -6,13 +6,18 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const formHandler = require("./handler/formHandler");
+const testHandler = require("./handler/testHandler");
+
 app.use(cors({
     origin: ['http://localhost:3000'],
     credentials: true // if you need cookies or auth headers
 }));
 app.use(express.json({ limit: '50mb' }));
-
 app.use(express.static(path.join(__dirname, 'build')));
+
+app.get("/form", formHandler);
+app.get("/test", testHandler);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

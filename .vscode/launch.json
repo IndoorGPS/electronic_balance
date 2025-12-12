@@ -2,25 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "React Chrome",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "React Node (npm start)",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "start"
-            ],
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Node server.js",
+            "name": "NodeJS",
             "type": "node",
             "request": "launch",
             "program": "${workspaceFolder}/server.js",
@@ -29,6 +11,13 @@
                 "PORT": "5000"
             },
             "console": "integratedTerminal"
-        }
+        },
+        {
+            "name": "React",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        },
     ]
 }
